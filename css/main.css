@@ -14,7 +14,11 @@ html > *:before {
 	top: 50%;
 	left: 50%;
 	background-color: rgba(0,0,0,.1);
-	transform: translate(-50%,-50%);
+	-webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
 	}
 	.module__title {
 		margin: 0 0 .5em 0;
