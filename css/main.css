@@ -1,0 +1,38 @@
+html > *,
+html > *:after,
+html > *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	}
+
+.module {
+	width: 50%;
+	padding: 1em;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: rgba(0,0,0,.1);
+	transform: translate(-50%,-50%);
+	}
+	.module__title {
+		margin: 0 0 .5em 0;
+		font-family: Helvetica, Arial;
+		font-weight: lighter;
+		color: #eaeaea;
+		}
+	.module__btn {
+		display: inline-block;
+		width: auto;
+		height: auto;
+		padding: 1em 2em;
+		background-color: #FFF;
+		color: #757575;
+		border: none;
+		cursor: pointer;
+		}
+	.module__btn:active {
+		background-color: #303030;
+		color: #eaeaea;
+		}
