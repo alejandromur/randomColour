@@ -1,8 +1,8 @@
 /*
 	@alejandro_mur
 	http://www.mamutlove.es
-	v1.0.0
-	2014/10/13
+	v1.1.0
+	2016/10/16
 	HEXADECIMAL COLOUR
 	RGB (pattern) => R: xx G: xx B: xx
 */
@@ -10,24 +10,26 @@
 var getRandomColor = {
 	letters : ["A","B","C","D","E","F"],
 	numbers : ["0","1","2","3","4","5","6","7","8","9"],
+	body : document.querySelector("body"),
+	colourName : document.querySelector(".module__title"),
 	randomColor : "#",
 	init : function () {
 		this.randomColor = "#";
-		getRandomColor.selectColour(randomColor);
+		this.selectColour(this.randomColor);
 	},
 	selectColour : function () {
 		for(var i = 0; i < 6; i++) {			
-			var num = getRandomColor.getRandomNumber(2);
-			var characterChoosen = getRandomColor.evenOrOdd(num);
-			var position = getRandomColor.getRandomNumber(characterChoosen);
-			getRandomColor.getCharacterFromArray(characterChoosen,position);
+			var num = this.getRandomNumber(2);
+			var characterChoosen = this.evenOrOdd(num);
+			var position = this.getRandomNumber(characterChoosen);
+			this.getCharacterFromArray(characterChoosen,position);
 		}
 	},
 	getRandomNumber : function (n){
 		if(n == "letters"){
-			n = getRandomColor.letters.length;
+			n = this.letters.length;
 		}else if(n == "numbers"){
-			n = getRandomColor.numbers.length;
+			n = this.numbers.length;
 		}
 		var num = 1+(Math.floor(Math.random()*n));
 		return num;
@@ -40,28 +42,25 @@ var getRandomColor = {
 		}
 	},
 	getCharacterFromArray : function (markArr,pos) {
-		var arr = undefined;
+		var arr = [];
 		if(markArr == "letters"){
-			arr = getRandomColor.letters;
+			arr = this.letters;
 		}else if(markArr == "numbers"){
-			arr = getRandomColor.numbers;
+			arr = this.numbers;
 		}
-		getRandomColor.randomColor += arr[pos-1];
-		getRandomColor.applyColour(getRandomColor.randomColor);
+		this.randomColor += arr[pos-1];
+		this.applyColour(this.randomColor);
 	},
 	applyColour : function (colour) {
-		var body = document.querySelector("body");
-		var colourName = document.querySelector(".module__title");
-		colourName.innerHTML = colour;
-		body.style.backgroundColor = colour;
+		this.colourName.innerHTML = colour;
+		this.body.style.backgroundColor = colour;
 	}
 }
 
 var buttonGetRandomColor = document.querySelector(".js-getcolour");
-var launchColour = getRandomColor.init;
 
 // LAUNCH OBJ
-launchColour();
+getRandomColor.init();
 
 // CHANGE COLOUR ON CLICK
 buttonGetRandomColor.addEventListener("click", function () {
