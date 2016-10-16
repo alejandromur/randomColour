@@ -1,6 +1,6 @@
-randomColour
-============
+<h1>randomColour</h1>
 
-Red? Green? Blue? Tired about always choosing the same colours when building your HTML? Get a random colour! Just for fun!!
+<p>Red? Green? Blue?<br>
+Tired about always choosing the same colours when building your HTML? Get a random colour!</p>
 
 <a href="http://www.mamutlove.es/projects/random-colour/">Demo</a>
